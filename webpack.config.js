@@ -97,6 +97,13 @@ module.exports = {
       template: './src/index.html',
 
     }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/button.html",
+
+      template: "./src/components/button.html",
+
+    }),
 
 
   ]
