@@ -118,6 +118,13 @@ module.exports = {
       template: "./src/components/card.html",
 
     }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/banner.html",
+
+      template: "./src/components/banner.html",
+
+    }),
 
 
   ]
