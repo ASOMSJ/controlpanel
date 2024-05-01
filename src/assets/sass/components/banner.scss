@@ -2,7 +2,8 @@ $color-banner: #47c1bf;
 $color-banner-light: #b7ecec;
 $color-banner-lighter: #e0f5f5;
 $color-banner-dark: #00848e;
-$icon-size:32px;
+$icon-size: 32px;
+
 .c-banner {
     @include e-card;
     background-color: $color-banner-lighter;
@@ -46,15 +47,20 @@ $icon-size:32px;
     line-height: $icon-size !important;
     text-align: center;
 }
-.c-banner >*{
+
+.c-banner>* {
     transform: opacity 200ms ease;
 }
-.c-banner{
-   transition: transform 400s ease-in-out 300s;
+
+.c-banner {
+    transition: transform 400ms ease-in-out 300ms;
 }
-.c-banner.collapse >*{
+
+.c-banner.collapse>* {
     opacity: 0;
 }
-.c-banner.collapse{
-   transform: scaleY(0);
+
+.c-banner.collapse {
+    transform: scaleY(0);
+    transform-origin: 50% 0;
 }
