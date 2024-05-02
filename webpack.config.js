@@ -2,14 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 
 module.exports = {
 
   entry: {
-    'app':'./src/index.js',
-    'assets/js/banner':'./src/assets/js/banner.js',
+    'app': './src/index.js',
+    'assets/js/banner': './src/assets/js/banner.js',
   },
   output: {
     publicPath: '/',
@@ -70,6 +70,19 @@ module.exports = {
 
       },
       {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        exclude: /fonts/,
+        use: [
+          {
+            loader: "file-loader", 
+            options: {
+              name: '[name].[ext]',
+              outputPath: "assets/images",
+            }
+          }
+        ]
+      },
+      {
 
         test: /\.(svg|eot|woff|woff2|ttf)$/,
 
@@ -94,20 +107,27 @@ module.exports = {
         ]
 
       },
+
     ]
 
   },
 
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
+
   plugins: [
     new CleanWebpackPlugin(),
-    new OptimizeCSSAssetsPlugin({}),
+
     new MiniCssExtractPlugin({
       filename: "assets/css/style.css"
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      chunks:['app'],
+      chunks: ['app'],
 
     }),
     new HtmlWebpackPlugin({
@@ -115,14 +135,14 @@ module.exports = {
       filename: "components/button.html",
 
       template: "./src/components/button.html",
-      chunks:['app'],
+      chunks: ['app'],
     }),
     new HtmlWebpackPlugin({
 
       filename: "components/textfield.html",
 
       template: "./src/components/textfield.html",
-      chunks:['app'],
+      chunks: ['app'],
 
     }),
     new HtmlWebpackPlugin({
@@ -130,7 +150,7 @@ module.exports = {
       filename: "components/card.html",
 
       template: "./src/components/card.html",
-      chunks:['app'],
+      chunks: ['app'],
 
     }),
     new HtmlWebpackPlugin({
@@ -138,7 +158,15 @@ module.exports = {
       filename: "components/banner.html",
 
       template: "./src/components/banner.html",
-      chunks:['app','assets/js/banner'],
+      chunks: ['app', 'assets/js/banner'],
+
+    }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/list.html",
+
+      template: "./src/components/list.html",
+      chunks: ['app'],
 
     }),
 
