@@ -11,6 +11,7 @@ module.exports = {
     'app': './src/index.js',
     'assets/js/banner': './src/assets/js/banner.js',
     'assets/js/tabs': './src/assets/js/tabs.js',
+    'assets/js/upload': './src/assets/js/upload.js',
   },
   output: {
     publicPath: '/',
@@ -75,7 +76,7 @@ module.exports = {
         exclude: /fonts/,
         use: [
           {
-            loader: "file-loader", 
+            loader: "file-loader",
             options: {
               name: '[name].[ext]',
               outputPath: "assets/images",
@@ -175,7 +176,15 @@ module.exports = {
       filename: "components/tabs.html",
 
       template: "./src/components/tabs.html",
-      chunks: ['app','assets/js/tabs'],
+      chunks: ['app', 'assets/js/tabs'],
+
+    }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/upload.html",
+
+      template: "./src/components/upload.html",
+      chunks: ['app', 'assets/js/upload'],
 
     }),
 
