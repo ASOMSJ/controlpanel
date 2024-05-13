@@ -195,6 +195,22 @@ module.exports = {
       chunks: ['app'],
 
     }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/summary.html",
+
+      template: "./src/components/summary.html",
+      chunks: ['app'],
+
+    }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/actions.html",
+
+      template: "./src/components/actions.html",
+      chunks: ['app'],
+
+    }),
 
 
   ]
