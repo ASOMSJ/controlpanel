@@ -211,6 +211,14 @@ module.exports = {
       chunks: ['app'],
 
     }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/sidebar.html",
+
+      template: "./src/components/sidebar.html",
+      chunks: ['app'],
+
+    }),
 
 
   ]
