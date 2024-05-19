@@ -219,6 +219,14 @@ module.exports = {
       chunks: ['app'],
 
     }),
+    new HtmlWebpackPlugin({
+
+      filename: "components/table.html",
+
+      template: "./src/components/table.html",
+      chunks: ['app'],
+
+    }),
 
 
   ]

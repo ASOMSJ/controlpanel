@@ -26,6 +26,7 @@
     color: $color-white;
     background-color: $color-primary;
     border-color: darken($color-primary, 5%);
+
     &:focus {
         border-color: darken($color-primary, 10%);
     }
@@ -35,11 +36,12 @@
     }
 
 }
+
 .c-btn--destructive {
     color: $color-white;
     background-color: $color-red;
     border-color: darken($color-red, 5%);
-  
+
     &:hover {
         background-color: darken($color-red, 10%);
     }
@@ -50,14 +52,24 @@
     color: $color-content;
     background-color: transparent;
     border-color: $color-content;
-  
+
     &:hover {
         background-color: transparent;
     }
 
 }
+
 .c-btn--slim {
     padding-top: 4px;
     padding-bottom: 4px;
 
+}
+
+.c-btn--icon {
+    font-size: 20px;
+    width: 40px;
+    height: 36px;
+    text-align: center;
+    padding: 0;
+    
 }
