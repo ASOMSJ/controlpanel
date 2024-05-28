@@ -228,6 +228,15 @@ module.exports = {
 
     }),
 
+    new HtmlWebpackPlugin({
+
+      filename: "components/chart.html",
+
+      template: "./src/components/chart.html",
+      chunks: ['app'],
+
+    }),
+
 
   ]
 

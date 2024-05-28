@@ -15,9 +15,12 @@ $product-media-size: 40px;
 
 .c-table__navigation {
     display: flex;
-    margin-right: auto;
+    // margin-right: auto;
     justify-content: space-between;
     align-items: center;
+}
+.c-table__action{
+    margin-left: auto;
 }
 
 .c-table__navigation__arrows {
