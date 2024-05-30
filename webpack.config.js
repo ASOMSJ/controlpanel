@@ -12,6 +12,7 @@ module.exports = {
     'assets/js/banner': './src/assets/js/banner.js',
     'assets/js/tabs': './src/assets/js/tabs.js',
     'assets/js/upload': './src/assets/js/upload.js',
+    'assets/js/chart': './src/assets/js/chart.js',
   },
   output: {
     publicPath: '/',
@@ -233,7 +234,7 @@ module.exports = {
       filename: "components/chart.html",
 
       template: "./src/components/chart.html",
-      chunks: ['app'],
+      chunks: ['app','assets/js/chart'],
 
     }),
 
