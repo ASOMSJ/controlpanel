@@ -130,7 +130,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      chunks: ['app'],
+      chunks: ['app','assets/js/banner','assets/js/chart','assets/js/tabs'],
 
     }),
     new HtmlWebpackPlugin({
