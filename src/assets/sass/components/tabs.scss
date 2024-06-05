@@ -11,6 +11,9 @@
     flex-grow: 1;
     border-bottom: 3px solid transparent;
     cursor: pointer;
+    &:hover{
+        background-color: rgba($color: $color-primary, $alpha: 0.1);
+    }
 }
 .c-tabs__tab.is-active{
     border-bottom: 3px solid $color-primary;
