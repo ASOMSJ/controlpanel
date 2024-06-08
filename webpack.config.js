@@ -142,6 +142,26 @@ module.exports = {
 
     }),
     new HtmlWebpackPlugin({
+      filename: 'products.html',
+      template: './src/products.html',
+      chunks: ['app'],
+
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'users.html',
+      template: './src/users.html',
+      chunks: ['app'],
+
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'orders.html',
+      template: './src/orders.html',
+      chunks: ['app'],
+
+    }),
+
+
+    new HtmlWebpackPlugin({
 
       filename: "components/button.html",
 
@@ -249,12 +269,12 @@ module.exports = {
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, './src/components/help.html'),
       location:'help',
-      template_filename:['index.html','add-product.html'],
+      template_filename:['index.html','add-product.html','products.html','users.html','orders.html'],
     }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, './src/components/sidebar.html'),
       location:'sidebar',
-      template_filename:['index.html','add-product.html'],
+      template_filename:['index.html','add-product.html','products.html','users.html','orders.html'],
     }),
 
     new HtmlWebpackPartialsPlugin({
