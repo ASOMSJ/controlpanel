@@ -10,6 +10,7 @@ $icon-size: 32px;
     border-top: 3px solid $color-banner-dark;
     padding: spacing("small") spacing("extra-wide");
     position: relative;
+    direction: rtl;
 }
 
 .c-banner__title {
@@ -63,4 +64,24 @@ $icon-size: 32px;
 .c-banner.collapse {
     transform: scaleY(0);
     transform-origin: 50% 0;
+}
+
+@media(max-width:$bp-phone-normal) {
+    .c-banner {
+        padding-right: spacing('small');
+        padding-left: spacing('small');
+    }
+
+    .c-banner__icon {
+        right: spacing('small');
+    }
+
+    .c-banner__close {
+        left: spacing('small');
+    }
+
+    .c-banner__title {
+        margin-left: spacing('normal');
+        margin-right: $icon-size+spacing("extra-small");
+    }
 }

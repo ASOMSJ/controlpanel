@@ -3,6 +3,7 @@
     display: inline-flex;
     align-items: center;
     padding: spacing("small") spacing("wide");
+    flex-wrap: wrap;
 
 }
 
@@ -21,25 +22,32 @@
     font-family: $family-heading;
     font-size: 28px;
     font-weight: bold;
-    &--positive{
+
+    &--positive {
         color: $color-blue;
     }
-    &--negative{
+
+    &--negative {
         color: $color-red;
     }
 }
+
 .c-summary__key {
     font-weight: 600;
 }
-.c-summary--boxless{
+
+.c-summary--boxless {
     background: none;
     box-shadow: none;
     margin-bottom: 0;
 }
-.c-summary--small{
-    .c-summary__value , .c-summary__key {
+
+.c-summary--small {
+
+    .c-summary__value,
+    .c-summary__key {
         font-size: 13px;
         font-weight: normal;
     }
-   
+
 }
