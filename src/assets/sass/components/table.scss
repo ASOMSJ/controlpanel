@@ -1,4 +1,5 @@
 $product-media-size: 40px;
+$bp-table-column: 660px;
 
 .c-table {
     @include e-card;
@@ -11,23 +12,27 @@ $product-media-size: 40px;
     align-items: baseline;
     margin-bottom: spacing('small');
     padding: 0 spacing('normal');
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .c-table__navigation {
     display: flex;
-    // margin-right: auto;
     justify-content: space-between;
     align-items: center;
+    margin-top: spacing();
     margin-right: auto;
 }
-.c-table__action{
+
+.c-table__action {
     margin-left: auto;
 }
 
 .c-table__navigation__arrows {
     margin-right: spacing('small');
 }
-.c-icon{
+
+.c-icon {
     margin-right: 0;
 }
 
@@ -35,7 +40,7 @@ $product-media-size: 40px;
     display: flex;
     align-items: baseline;
     margin-top: spacing('normal');
-    padding-left: spacing('normal');
+    padding: spacing('normal');
 }
 
 .c-table__title {
@@ -56,10 +61,11 @@ $product-media-size: 40px;
 
     th,
     td {
-        &:first-child{
+        &:first-child {
             padding-right: spacing('normal');
             width: 75px;
         }
+
         padding: spacing('extra-small');
         border-bottom: 1px solid rgba(darken(white, 40%), 0.15);
 
@@ -69,4 +75,55 @@ $product-media-size: 40px;
             vertical-align: middle;
         }
     }
+}
+
+@media(max-width:$bp-table-column) {
+    .c-table__data {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    thead,
+    tbody {
+        display: flex;
+        flex-grow: 1;
+        min-width: max-content;
+
+    }
+
+    tr {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-direction: column;
+    }
+
+    th,
+    td {
+        padding: spacing('extra-small') spacing();
+
+        &:first-child {
+            padding-right: spacing() !important;
+            width: initial !important;
+        }
+
+
+    }
+
+    th.c-table--hight-pic {
+        height: $product-media-size;
+        box-sizing: content-box;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .c-table__navigation {
+        margin-right: 0 !important;
+    }
+   
+    .c-table__footer{
+        display: none;
+    }
+
 }
