@@ -18,3 +18,19 @@
 .welcom-tag{
     font-size: 28px;
 }
+
+@media (max-width:$bp-tablet-normal) {
+    .page-container{
+        padding-right: $sidebar-control-width+40px+spacing('small');
+        padding-left: spacing('small');
+    }
+    .home-intro{
+       margin: spacing("normal") 0 spacing("wide");
+    }
+    .welcom-tag{
+        font-size: 24px;
+    }
+    .main-page{
+        background: none;
+    }
+}

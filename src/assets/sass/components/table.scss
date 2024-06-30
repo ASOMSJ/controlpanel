@@ -5,6 +5,7 @@ $bp-table-column: 660px;
     @include e-card;
     padding: 0 0 spacing('normal') 0;
     width: 100%;
+  
 }
 
 .c-table__header {
@@ -53,7 +54,7 @@ $bp-table-column: 660px;
 .c-table__data {
     width: 100%;
     font-size: 13px;
-    border-collapse: collapse;
+
 
     th {
         text-align: right;
@@ -66,7 +67,7 @@ $bp-table-column: 660px;
             width: 75px;
         }
 
-        padding: spacing('extra-small');
+        padding: spacing('extra-small') ;
         border-bottom: 1px solid rgba(darken(white, 40%), 0.15);
 
         img {
@@ -75,7 +76,13 @@ $bp-table-column: 660px;
             vertical-align: middle;
         }
     }
+    .c-list__data{
+        border-top: 0 !important;
+       
+    }
 }
+
+
 
 @media(max-width:$bp-table-column) {
     .c-table__data {
@@ -101,29 +108,68 @@ $bp-table-column: 660px;
     th,
     td {
         padding: spacing('extra-small') spacing();
-
+        margin: 0 !important;
+        width: 100%;
         &:first-child {
-            padding-right: spacing() !important;
-            width: initial !important;
+            width: 100% !important;
         }
 
 
     }
 
-    th.c-table--hight-pic {
+    th:last-child {
+        flex-grow: 1;
+    }
+
+    .c-table--hight-pic {
         height: $product-media-size;
+        width: auto;
+
         box-sizing: content-box;
         display: flex;
         align-items: center;
+        justify-self: center;
 
     }
 
     .c-table__navigation {
         margin-right: 0 !important;
     }
-   
-    .c-table__footer{
+
+    .c-table__footer {
         display: none;
     }
+
+    .c-list--table-row {
+        width: initial;
+        align-items: flex-start;
+        padding: 0;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-direction: column;
+
+
+        .c-list__action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 0 !important;
+
+            .c-btn {
+                margin-bottom: spacing("small");
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+      
+
+
+
+    }
+   
 
 }

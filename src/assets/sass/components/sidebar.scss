@@ -10,13 +10,16 @@ $sidebar-logo-height:$sidebar-control-width;
     display: flex;
     background-color: $color-sidebar-background;
     padding: spacing('wide') spacing('small');
+    direction: rtl;
+    transition: width 150ms ease-in-out 150ms;
+
 }
 
 
 
 .c-sidebar__control {
     display: flex;
-    width: control;
+    width: $sidebar-control-width;
     flex-direction: column;
     align-items: center;
 }
@@ -53,6 +56,7 @@ $sidebar-logo-height:$sidebar-control-width;
 
 .c-sidebar__menu{
     margin-right: spacing('small');
+   
 }
 .c-sidebar__title{
     font-size: 24px;
@@ -75,4 +79,40 @@ $sidebar-logo-height:$sidebar-control-width;
 }
 .c-icon{
     margin-right: spacing('extra-small');
+}
+
+@media (max-width:$bp-tablet-normal) {
+
+    .c-sidebar__menu{
+        opacity: 0; /* بداية العنصر غير مرئي */
+        
+        transform: translateX(100%); /* تحريك العنصر بنسبة 100% إلى اليمين */
+        transition: opacity 550ms ease, transform 600ms ease;
+       
+    }
+    .c-sidebar {
+        width: $sidebar-control-width + 40px;
+        z-index: 10;
+        &:hover{
+          
+                width:$layout-sidebar ;
+           
+            .c-sidebar__menu{
+                padding-left: spacing();
+                opacity: 1; /* جعل العنصر مرئيًا */
+                transform: translateX(0);
+            }
+        }
+        &:focus{
+           
+                width:$layout-sidebar ;
+           
+            .c-sidebar__menu{
+                display: inline !important;
+                padding-left: spacing();
+            }
+        }
+    }
+   
+    
 }
